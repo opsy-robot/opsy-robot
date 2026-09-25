@@ -47,6 +47,10 @@ NEXT_PUBLIC_BASE_PATH=/<repo> npm run build
 | `NEXT_PUBLIC_SITE_URL` | The public URL, used for social-share previews |
 | `NEXT_PUBLIC_BASE_PATH` | A sub-path for hosting, such as `/opsy-robot` |
 
+### Hardware waitlist
+
+The **Join waitlist** form posts straight to a Google Form (responses appear in the form's Responses tab / linked Sheet). The form URL and entry ids live in `src/lib/site.ts` → `waitlist`. If you add or reorder questions in the Google Form, update those ids.
+
 ## Updating content
 
 All the page text lives in **`src/lib/content.ts`**. To post a daily update, edit that file. Put new photos or videos in `public/` and reference them with `asset("/photos/your-file.jpg")`.

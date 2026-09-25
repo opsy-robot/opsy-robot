@@ -26,19 +26,16 @@ export function WaitlistDialog({ className, size = "sm", compact = true }: { cla
     const data = new FormData(form)
     const tg = String(data.get("telegram") || "").trim()
     data.set("telegram", tg.startsWith("@") ? tg : `@${tg}`)
-    if (!site.waitlistEndpoint) {
-      setError("Sign-ups open in a few hours — follow us on X to catch the launch.")
-      setState("error")
-      return
+    if (data.get("company")) { setState("done"); return } // honeypot: silently drop bots
+    const body = new URLSearchParams()
+    for (const [key, entry] of Object.entries(site.waitlist.fields)) {
+      const v = String(data.get(key) ?? "").trim()
+      if (v) body.append(entry, v)
     }
     setState("sending")
     try {
-      // Apps Script web apps don't send CORS headers, so post "no-cors" (fire-and-forget).
-      await fetch(site.waitlistEndpoint, {
-        method: "POST",
-        mode: "no-cors",
-        body: new URLSearchParams(data as unknown as Record<string, string>),
-      })
+      // Google Forms doesn't send CORS headers, so post "no-cors" (the response is opaque but the entry is recorded).
+      await fetch(site.waitlist.action, { method: "POST", mode: "no-cors", body })
       setState("done")
       form.reset()
     } catch {
