@@ -18,7 +18,7 @@ export function Logo({ className }: { className?: string }) {
   return (
     <a href="#purpose" className={cn("group inline-flex items-center gap-2", className)} aria-label="Opsy Robot — back to top">
       <LogoMark className="transition-transform duration-300 [transition-timing-function:cubic-bezier(.34,1.56,.64,1)] group-hover:-rotate-12 group-hover:scale-110" />
-      <span className="font-display text-2xl leading-none tracking-wide">Opsy Robot</span>
+      <span className="whitespace-nowrap font-display text-xl leading-none tracking-wide sm:text-2xl">Opsy Robot</span>
     </a>
   )
 }

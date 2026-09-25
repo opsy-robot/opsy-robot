@@ -6,7 +6,8 @@ import { hero } from "@/lib/content"
 import { site } from "@/lib/site"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { GithubIcon } from "@/components/icons"
+import { GithubIcon, XIcon } from "@/components/icons"
+import { WaitlistDialog } from "@/components/waitlist-dialog"
 import { Logo } from "@/components/logo"
 import { RecordsDialog } from "./records-dialog"
 
@@ -34,11 +35,19 @@ export function Hero() {
         <div className="rounded-full border-[3px] border-ink bg-paper py-1.5 pl-1.5 pr-4 shadow-toon">
           <Logo />
         </div>
-        <Button asChild variant="default" size="sm" className="hidden sm:inline-flex">
-          <a href={site.github} target="_blank" rel="noreferrer">
-            <GithubIcon className="size-4" /> GitHub
-          </a>
-        </Button>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Button asChild variant="outline" size="sm" className="px-3 sm:px-4">
+            <a href={site.x} target="_blank" rel="noreferrer" aria-label="Opsy Robot on X">
+              <XIcon className="size-4" /> <span className="hidden sm:inline">Follow on X</span>
+            </a>
+          </Button>
+          <Button asChild variant="default" size="sm" className="px-3 sm:px-4">
+            <a href={site.github} target="_blank" rel="noreferrer" aria-label="Opsy Robot on GitHub">
+              <GithubIcon className="size-4" /> <span className="hidden sm:inline">GitHub</span>
+            </a>
+          </Button>
+          <WaitlistDialog />
+        </div>
       </header>
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 pb-24 pt-10 sm:px-6 md:pb-28 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pl-28 lg:pt-14">
@@ -54,6 +63,7 @@ export function Hero() {
             {hero.lead}
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
+            <WaitlistDialog size="lg" compact={false} />
             <Button asChild size="lg" variant="default">
               <a href={site.github} target="_blank" rel="noreferrer">
                 <GithubIcon className="size-5" /> {hero.github} <ArrowUpRight strokeWidth={3} />

@@ -1,6 +1,6 @@
 # Opsy Robot
 
-The build log for **Opsy Robot**, an unofficial, non-commercial 1:1 rebuild of the Microduck robot for personal study and research.
+The build log for **Opsy Duck**, the Opsy Robot walking robot duck.
 
 The site has a cartoon theme: bold black outlines, bright colours, chunky type, bouncy hover effects and sticker-style badges. It is built with **Next.js 15 + Tailwind CSS v4 + shadcn/ui**.
 
@@ -76,5 +76,4 @@ public/
 ## Credits and notices
 
 - The hero's floating photo layout is adapted from the 21st.dev *Modern Hero Section* pattern.
-- Microduck is a Pollen Robotics project. Opsy Robot is **not** affiliated with, authorised or endorsed by Pollen Robotics.
 - The 3D models are under a non-commercial licence. This build is for personal, non-commercial use only.

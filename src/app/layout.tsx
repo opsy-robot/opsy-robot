@@ -8,12 +8,12 @@ import { site, asset } from "@/lib/site"
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} | An unofficial 1:1 Microduck rebuild log`,
+  title: `${site.name} | The Opsy Duck build log`,
   description: site.description,
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — a Microduck rebuild, for real`,
+    title: `${site.name} — Opsy Duck, rebuilt for real`,
     description: site.description,
     images: [{ url: asset("/og.png"), width: 1200, height: 630 }],
   },

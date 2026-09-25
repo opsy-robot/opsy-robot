@@ -10,8 +10,8 @@ export const nav = [
 ] as const
 
 export const hero = {
-  eyebrow: "Opsy Robot · an unofficial 1:1 Microduck rebuild log",
-  title: "Microduck",
+  eyebrow: "Opsy Robot · the Opsy Duck build log",
+  title: "Opsy Duck",
   titleAccent: "Rebuilt. And it really walks.",
   lead: "A personal, non-commercial research build — matched to the original as closely as the public evidence lets us.",
   github: "View on GitHub",
@@ -26,7 +26,7 @@ export const hero = {
     caption: "Rebuild complete · the real robot on camera",
     stamp: "All tests passed · 2026.09.14",
   },
-  stickers: [asset("/photos/portrait-closeup.jpg"), asset("/stages/06-full-rig-test.jpg"), asset("/photos/portrait-back.jpg")],
+  stickers: [asset("/photos/portrait-closeup.jpg"), asset("/stages/06-full-rig-test.jpg"), asset("/photos/new2.jpg")],
 }
 
 export const records = {
@@ -66,7 +66,7 @@ export const goals = {
     {
       n: "01",
       title: "Stay close to the original",
-      body: "Use parts backed by official evidence, so the mechanics, electronics, and software stay as close to Microduck as we can get them.",
+      body: "Use parts backed by official evidence, so the mechanics, electronics, and software stay as close to the original design as we can get them.",
       color: "bg-sun",
     },
     {
@@ -77,8 +77,8 @@ export const goals = {
     },
     {
       n: "03",
-      title: "Explore a China-made alternative",
-      body: "Test domestic parts, control links, and manufacturing as a separate experiment — never mixed into the original-matched parts list or passed off as official.",
+      title: "Make it fun to live with",
+      body: "Turn the build into a real companion — new moves, games, and voice tricks, shared the moment they work on the robot.",
       color: "bg-bubble",
     },
   ],
@@ -104,7 +104,7 @@ export const progress = {
   policies: {
     eyebrow: "08 / Official policies",
     title: "Standing was just the start. More moves unlocked.",
-    sub: "All 9 official policies tested on the real robot",
+    sub: "All 9 official policies tested on the real robot — here it is out for a walk.",
     video: asset("/media/policies.mp4"),
     poster: asset("/media/policies-poster.jpg"),
     moves: ["Walking", "Stand & pose", "Sit-to-stand", "Ground pick", "Left kick", "Right kick", "Roller drive", "Roller crouch", "Forward roll"],
@@ -115,8 +115,8 @@ export const progress = {
     sub: "Built for real. Here are a few close-ups.",
     photos: [
       { src: asset("/photos/portrait-side.jpg"), caption: "Head up. Hello, world.", tilt: "-2deg", color: "bg-sun" },
-      { src: asset("/photos/portrait-back.jpg"), caption: "Even the back view has style.", tilt: "1.5deg", color: "bg-sky" },
-      { src: asset("/photos/portrait-desk.jpg"), caption: "Our tiny desk buddy.", tilt: "-1deg", color: "bg-lime" },
+      { src: asset("/photos/new2.jpg"), caption: "Even the back view has style.", tilt: "1.5deg", color: "bg-sky" },
+      { src: asset("/photos/new1.jpg"), caption: "Our tiny desk buddy.", tilt: "-1deg", color: "bg-lime" },
       { src: asset("/photos/portrait-closeup.jpg"), caption: "Zoom in on the details.", tilt: "2deg", color: "bg-bubble" },
     ],
   },
@@ -129,7 +129,7 @@ export const progress = {
     { n: "05", title: "PCB arrival / HAT power-up", img: asset("/stages/05-radxa-hat-power.jpg") },
     { n: "06", title: "15-servo rig test", img: asset("/stages/06-full-rig-test.jpg") },
     { n: "07", title: "Low-gain stand", img: asset("/stages/07-low-gain-stand.jpg") },
-    { n: "08", title: "All 9 official policies passed", img: asset("/photos/portrait-desk.jpg") },
+    { n: "08", title: "All 9 official policies passed", img: asset("/photos/new1.jpg") },
   ],
 }
 
@@ -138,7 +138,7 @@ export const software = {
   kicker: "Our first cross-platform app",
   title: "Ducklink",
   tagline: "Every duck, connected.",
-  lead: "From the duck on your desk to a flock around the world — we're building one home to connect, control, and manage every Microduck.",
+  lead: "From the duck on your desk to a flock around the world — we're building one home to connect, control, and manage every Opsy Duck.",
   bullets: ["Phone · Tablet · Desktop", "Live video and online control", "Battery, temperature, and memory management", "Apps, driver updates, and voice wake-up"],
   building: "Building at full speed",
   slides: [
@@ -202,6 +202,5 @@ export const software = {
 }
 
 export const footer = {
-  note: "An unofficial, non-commercial research build for personal study. Microduck is a Pollen Robotics project; Opsy Robot is not affiliated with or endorsed by Pollen Robotics.",
   top: "Back to top",
 }
