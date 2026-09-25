@@ -33,6 +33,8 @@ npm run preview    # serves ./out on http://localhost:3000
 
 You can upload `out/` to any static host, such as GitHub Pages, Netlify, Vercel or Cloudflare Pages.
 
+The live site is **https://opsyrobot.xyz**, served by GitHub Pages from the `gh-pages` branch (custom domain set by `public/CNAME`).
+
 **GitHub Pages as a project site** (`https://<user>.github.io/<repo>/`): build with a base path so asset links resolve:
 
 ```bash

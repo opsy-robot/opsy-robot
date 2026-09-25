@@ -1,7 +1,7 @@
 // Single place for brand + links. Update `github` once the new repo is live.
 export const site = {
   name: "Opsy Robot",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://opsyrobot.xyz",
   description:
     "Opsy Robot is the build log for Opsy Duck — a small walking robot duck. Build progress, hardware tests, software updates and the hardware waitlist.",
   github: process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/opsy-robot/opsy-robot",
