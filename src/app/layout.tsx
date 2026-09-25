@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — a Microduck rebuild, for real`,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: asset("/og.png"), width: 1200, height: 630 }],
   },
   icons: { icon: asset("/icon.svg") },
 }
