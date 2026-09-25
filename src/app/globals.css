@@ -1,26 +1,110 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* ---------- Opsy Robot · cartoon theme tokens ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #141019;
+  --ink-soft: #3b3546;
+  --cream: #fff8e7;
+  --paper: #ffffff;
+  --sun: #ffd23f;
+  --bubble: #ff6fb5;
+  --sky: #3ec7ff;
+  --lime: #9be15d;
+  --tang: #ff8a1f;
+  --grape: #7b4dff;
+  --night: #1d1633;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-sun: var(--sun);
+  --color-bubble: var(--bubble);
+  --color-sky: var(--sky);
+  --color-lime: var(--lime);
+  --color-tang: var(--tang);
+  --color-grape: var(--grape);
+  --color-night: var(--night);
+
+  --font-display: "Lilita One", "Fredoka Variable", system-ui, sans-serif;
+  --font-sans: "Fredoka Variable", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --shadow-toon: 4px 4px 0 0 var(--ink);
+  --shadow-toon-lg: 6px 6px 0 0 var(--ink);
+  --shadow-toon-xl: 10px 10px 0 0 var(--ink);
+
+  --animate-toon-pop: toon-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-float: toon-float 6s ease-in-out infinite;
+  --animate-wiggle: toon-wiggle 2.4s ease-in-out infinite;
+  --animate-spin-slow: spin 18s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes toon-pop {
+  0% { opacity: 0; transform: scale(0.86) rotate(-2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes toon-float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--r, 0deg)); }
+}
+@keyframes toon-wiggle {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
 }
 
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--sun); color: var(--ink); }
+
+/* Bouncy press used by buttons / interactive stickers */
+.toon-press {
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 180ms ease;
+}
+.toon-press:hover { transform: translate(-2px, -3px) rotate(-1deg); box-shadow: 7px 7px 0 0 var(--ink); }
+.toon-press:active { transform: translate(3px, 3px); box-shadow: 0 0 0 0 var(--ink); }
+
+/* Card lift on hover */
+.toon-lift {
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 200ms ease;
+}
+.toon-lift:hover { transform: translate(-3px, -6px) rotate(var(--hr, -0.6deg)); box-shadow: 10px 10px 0 0 var(--ink); }
+
+/* Decorative background patterns — kept to margins, never behind body text */
+.bg-dots {
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.8px);
+  background-size: 22px 22px;
+}
+.bg-checker {
+  background-image:
+    conic-gradient(color-mix(in srgb, var(--ink) 7%, transparent) 25%, transparent 0 50%, color-mix(in srgb, var(--ink) 7%, transparent) 0 75%, transparent 0);
+  background-size: 48px 48px;
+}
+
+/* Chunky outlined display text */
+.text-outline {
+  -webkit-text-stroke: 3px var(--ink);
+  paint-order: stroke fill;
+}
+.text-pop { text-shadow: 4px 4px 0 var(--ink); }
+
+/* Starburst sticker shape */
+.burst {
+  clip-path: polygon(50% 0%, 61% 13%, 78% 6%, 80% 23%, 97% 25%, 89% 40%, 100% 53%, 86% 63%, 91% 80%, 74% 81%, 68% 97%, 53% 88%, 39% 100%, 31% 85%, 14% 89%, 15% 72%, 0% 63%, 10% 49%, 2% 33%, 18% 28%, 20% 11%, 36% 15%);
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
